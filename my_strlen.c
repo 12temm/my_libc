@@ -1,11 +1,13 @@
-int
-my_strlen(const char *size_t)
+#include "my_libc.h"
+
+size_t
+my_strlen(const char *str)
 {
-	int length = 0;
-	if (size_t[length] == '\0') {
+	size_t length = 0;
+	if (str[length] == '\0') {
 		return 0;
 	} else {
-		while (size_t[length] != '\0') {
+		while (str[length] != '\0') {
 			length++;
 		}
 	}

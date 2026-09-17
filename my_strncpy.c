@@ -1,3 +1,5 @@
+#include "my_libc.h"
+
 char *
 my_strncpy(char *dst, const char *src, int n)
 {
