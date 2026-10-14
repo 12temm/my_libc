@@ -1,26 +1,17 @@
 #include <stddef.h>
 
-void *
-my_memmove(void *dst, const void *src, size_t len)
+int
+my_memcmp(const void *b1, const void *b2, size_t len)
 {
-	unsigned char *d = (unsigned char *)dst;
-	const unsigned char *s = (const unsigned char *)src;
-	if (d < s) {
-		while (len > 0) {
-			*d = *s;
-			d++;
-			s++;
-			len--;
-		}
-	} else if (d > s) {
-		d += len;
-		s += len;
-		while (len > 0) {
-			d--;
-			s--;
-			*d = *s;
-			len--;
-		}
-	}
-	return dst;
+    const unsigned char *p1 = (const unsigned char *)b1;
+    const unsigned char *p2 = (const unsigned char *)b2;
+    while (len > 0) {
+        if (*p1 != *p2) {
+            return *p1 - *p2;
+        }
+        p1++;
+        p2++;
+        len--;
+    }
+    return 0;
 }
