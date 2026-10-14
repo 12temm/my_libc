@@ -15,7 +15,8 @@ my_strrchr.c \
 my_strstr.c \
 my_memset.c \
 my_memcpy.c \
-my_memmove.c
+my_memmove.c \
+my_memcmp.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
